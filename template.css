@@ -1,0 +1,83 @@
+body{margin:0}
+nav ul{background-color:#000000; color:white; text-align:center; padding:10px;margin:0;word-spacing:280px; margin:10;
+ top: 0; left: 0; right:0;position:fixed;z-index:5}
+
+.JS{font: italic bold 200px/70px Georgia, serif; text-align: center;margin:0;padding:200px;letter-spacing: 15px;color:white;text-shadow: 2px 7px 10px black;background-image: url("http://www.planwallpaper.com/static/images/autumn-wallpaper-hd.jpg");
+background-repeat: repeat-x;}
+.ul1 li{display:inline-block;}
+.ul1 a{text-decoration:none;color:white;font-family: 'Yanone Kaffeesatz';}
+.se div{color:black;color:white;padding:30px;word-spacing:280px; ;top: 0; left: 0; right:0;}
+.cl{width:100%;text-align:center;padding:0px 0 0 0;}
+.slideshow-container{margin:0;}
+.mySlides fade{padding:0}
+.Rl{width:100%;text-align:right;}
+.mySlides img{width:40%}
+.cll{width:100%;background-color:black;text-align:center;padding:30px;margin:0;display:block;}
+.cll ul{padding:0 47%;width:80px;text-align:center;overflow:hidden;margin:0;}
+.cll li{width:10px;height:10px;float:left;margin:5px;border-radius:10px;cursor:pointer;display:inline-block}
+.cll h2{margin:0}
+.red{background:red;}
+.green{background:green;}
+.black{background:#ffff00;}
+.blue{background-color:#0033cc;}
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Coiny|Yanone+Kaffeesatz');
+footer{background-color:black;color:white;padding:3px}
+.ft{margin:0 0 0 19px;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+.JS:hover {color: #ff9900;transition:0.25s}
+.cll:hover {color: #ff9900;transition:0.25s}
+.h:hover {color: #ff9900;transition:0.25s}
+
+
+.ad{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #79D1B0;
+  overflow: hidden;
+}
+.AD{
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
+}
+p a{text-decoration:none;color: white;font-family: monospace;}
+
+.clock{
+  width:100%
+  height:100%;
+  font-family: 'Vollkorn', serif;
+  margin: 0;
+  padding: 0;text-align:center;background-image:url("http://wallpoper.com/images/00/38/28/83/clocks_00382883.jpg")
+}
+p.n{margin:0;
+  color: white;
+  text-align: center;
+  font-family: monospace;
+  font-size:20px;padding:20px}
+.t{-webkit-filter: grayscale(100%);filter: grayscale(100%);}
+.t:hover {-webkit-filter: grayscale(0%);filter: grayscale(0%);}
+.ab{text-align:center;}

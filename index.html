@@ -1,0 +1,177 @@
+<html>
+  <head>
+    <title>JS Jawascript</title>
+    <link rel="stylesheet" type="text/css" href="template.css">
+    <meta charset ="UTF-8">
+  </head>
+  <body>
+  <script src="index.js">
+  </script>
+    <header id="js">
+      <div class="JS"><b>T-shirt Design<b></div>
+    </header>
+    <nav>
+      <ul class="ul1">
+        <li><a href="#js"class="h">Home</a></li>
+        <li><a href="#see"class="h">Style&Design</a></li>
+        <li><a href="#add"class="h">GoogleMaps</a></li>
+        <li><a href="#clo"class="h">Clockstart</a></li>
+      </ul>
+    </nav>
+    <section>
+       <div class="se" >
+         <div class="cll"id="see"><h2>style&design</h2>
+           <ul>
+             <li class="red" onclick="currentSlide(1);"></li>
+             <li class="green" onclick="currentSlide(2);"></li>
+             <li class="black" onclick="currentSlide(3);"></li>
+             <li class="blue" onclick="currentSlide(4);"></li>
+           </ul>
+        </div> 
+  <div class="cl">
+      <div class="slideshow-container">
+          <div class="mySlides fade">
+      <img src="https://www.img.in.th/images/a56492939f8555b4fab11faf4fdea0a4.gif">
+          </div>
+          <div class="mySlides fade">
+      <img src="http://upic.me/i/ev/333d-1.gif" >
+          </div>
+      <div class="mySlides fade">
+       <img src="http://upic.me/i/b1/8i111.gif" >
+          </div>
+    <div class="mySlides fade">
+    <img src="http://upic.me/i/u9/33333331.gif" >
+    </div>
+</div>  
+</div>
+         
+       </div>
+      
+    </section>
+ <section class="ad" id="add">
+  
+   
+   <p class="AD">
+  Address: Thailand, Songkla, PSU<br>Google Maps <br><a href="https://www.w3schools.com/graphics/tryit.asp?filename=trymap_overlays_marker">Credit By W3school</a>
+   </p>
+    <div>
+       <div id="map" style="width:1500px;height:800px;margin-top:50px; margin:0 0 40px 200px;border-radius:35px;">
+       </div>
+   </div>
+    <script> 
+function myMap() {
+  var myCenter = new google.maps.LatLng(7.0068065,100.4979054,17.75);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 15};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+ </section>
+         
+<div class="clock" id="clo"> 
+   <p class="n">
+  Clock Start <br><a href="https://www.w3schools.com/graphics/canvas_clock.asp">Credit By W3school</a>
+   </p> 
+  
+   <canvas id="canvas" width="400" height="400"padding:20px 0 0 0 0;>
+      <script>
+          var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+ 
+</div>
+
+    <footer>
+   <div class="ab"> <a href="https://twitter.com/"target="_blank"><img src="http://upic.me/i/5e/social-media-icons.gif"width="2%"class="t"></img></a> 
+      <a href="https://www.facebook.com/ridwan.sooleah" target="_blank"><img src="http://upic.me/i/e3/faaaa.gif"width="2%"class="t"></img></a>
+     
+      <a href="https://plus.google.com/u/1/101963859848668010733"target="_blank"><img src="http://upic.me/i/qe/social-media-icons.gif"width="2%"class="t"></img></a>
+
+
+<br>
+&#169;Ritcabuchi 
+  
+      </div>
+    </footer>
+  </body>
+</html>
